@@ -5,18 +5,21 @@ export default function TextForm(props) {
         console.log("this on Change" + text);
         let newText = text.toUpperCase();
         setText(newText);
+        props.showAlert("Upper case", "success");
     }
 
     const handleLoClick = () => {
         console.log("this Lo Change" + text);
         let newText = text.toLowerCase();
         setText(newText);
+        props.showAlert("Lower case", "success");
     }
 
     const handleClearClick = () => {
         console.log("this is Clear Text" + text);
         let newText = "";
         setText(newText);
+        props.showAlert("Text Cleared!", "success");
     }
     
     //for copy text
@@ -25,14 +28,24 @@ export default function TextForm(props) {
         text.select();
         console.log(text.value);
         navigator.clipboard.writeText(text.value);
-    }
-
-    const handleOnChange = (event) => {
-        setText(event.target.value);
+        props.showAlert("Text Copied", "success");
     }
 
     // useState
     const [text, setText] = useState("");
+
+    const handleOnChange = (event) => {
+        setText(event.target.value);
+    } 
+
+    // for word counting
+    if(text.length){
+        var num = text.split(" ").length;
+    }
+    else{
+        num = 0;
+    }
+    console.log(text.length);
 
     return (
         <>
@@ -48,7 +61,7 @@ export default function TextForm(props) {
             </div>
             <div className="container my-3" style={{color:props.mode==="light"?"black":"white"}}>
                 <h2>Your Text Summary</h2>
-                <p>{text.split(" ").length} words and {text.length} characters</p>
+                <p>{`${num}`} words and {text.length} characters</p>
                 <p>{0.008 * text.split(" ").length} Minutes to read</p>
                 <h2>Previews</h2>
                 <p>{text.length>0?`${text}`:"Please enter the text to preview"}</p>
