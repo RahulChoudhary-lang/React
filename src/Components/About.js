@@ -27,7 +27,7 @@ export default function About() {
     }
 
     return (
-        <div className="accordion" id="accordionExample" >
+        <div className="accordion container my-3" id="accordionExample">
             <div className="accordion-item" style={myStyle}>
                 <h2 className="accordion-header" id="headingOne">
                     <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -65,7 +65,7 @@ export default function About() {
                 </div>
             </div>
             <div className='container my-3'>
-                <button type="button" onClick={toggleBtn} style={myStyle} class="btn btn-primary">{textBtn}</button>
+                <button type="button" onClick={toggleBtn} className="btn btn-primary">{textBtn}</button>
             </div>
         </div>
     );
