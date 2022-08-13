@@ -3,14 +3,17 @@ import React, { useState } from 'react';
 import './App.css';
 import Navbar from './Components/Navbar';
 import TextForm from './Components/TextFrom';
-import About from './Components/About';
+// import About from './Components/About';
 import Alert from "./Components/Alert";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+//   Link
+// } from "react-router-dom";
+
+
+   
 
 
 
@@ -46,7 +49,7 @@ function App() {
 
   return (
     <>
-      <Router>
+      {/* <Router> */}
         <Navbar title="React App" mode={mode} text={text} toggleMode={toggleMode} />
 
         {/* <Navbar /> */}
@@ -54,22 +57,22 @@ function App() {
         <Alert alert={alert} />
 
         <div>
-          <Switch>
+          {/* <Switch> */}
             {/* Here we use exact for exact path location */}
-            <Route exact path="/about">
+            {/* <Route exact path="/about">
               <div className='container mp-3'>
                 <About />
               </div>
-            </Route>
+            </Route> */}
 
-            <Route exact path="/">
+            {/* <Route exact path="/"> */}
               <div className='container mp-3'>
                 <TextForm heading="Enter Text" mode={mode} showAlert={showAlert} />
               </div>
-            </Route>
-          </Switch>
+            {/* </Route> */}
+          {/* </Switch> */}
         </div>
-      </Router>
+      {/* </Router> */}
     </>
   );
 }
