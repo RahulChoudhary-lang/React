@@ -33,7 +33,17 @@ function App() {
     }, 2000);
   }
 
-  const toggleMode = () => {
+  // const classlistRemove = () => {
+  //   document.body.classList.remove("bg-danger");
+  //   document.body.classList.remove("bg-warning");
+  //   document.body.classList.remove("bg-success");
+  // } 
+
+  const toggleMode = (cls) => {
+  // const toggleMode = () => {
+    // classlistRemove();
+    // document.body.classList.add("bg-" + cls);
+
     if (mode === "dark" && text === "Enable Darkmode") {
       setMode("light");
       setText("Enable Lightmode");
